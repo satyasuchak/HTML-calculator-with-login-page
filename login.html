@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login</title>
+<script>
+	var attempt = 3;
+	function valid() {
+	 var Username = document.getElementById('email').value;
+	 var Password = document.getElementById('pswd').value;
+	 if (Username == "satya" && Password == "sms12345" ||Username == "mahesh" && Password == "sms12345" || Username == "hiya" && Password == "sms12345" || Username == "anisha" && Password == "sms12345" || Username == "viral" && Password == "sms12345") {
+	 	window.open("site.html");
+
+	 }else{
+	 	attempt --;
+	 	alert("you are left with " +attempt+ " attempts");
+	 	if (attempt == 0 ) {
+	 		document.getElementById("pswd").disabled = true;
+	 		document.getElementById("email").disabled = true;
+	 		document.getElementById("butnn").disabled = true;
+	 	}
+	 }
+	}
+</script>
+<style >
+	h1,h2{
+		text-align: center;
+		font-family: sans-serif; 
+	}
+	body{
+		font-family: Arial,Helvetica,sans-serif;
+		background-image: url("download.jpg");
+		
+	}
+	*{
+		box-sizing: border-box;
+		
+	}
+	.container{
+		padding: 20px ;
+		background-color:white;
+		margin: 50px;
+
+	}
+
+	input{
+		width: 100%;
+		padding:15px;
+		margin: 10px 0px 22px 0px;
+		border:none;
+		background-color: #f1f1f1;
+		border-radius: 50px;
+		outline:none;
+
+	}
+	input:focus {
+		background-color: #ddd;
+
+	}
+	input:hover{
+		background-color: #cbe1f2;
+	}
+
+         .regesterbuttn{
+         	background-color: #4CAF50;
+         	color:white;
+         	padding: 16px 20px;
+         	width:100% ; 
+                 margin:9px
+                 border:none;
+                 border-radius: 50px; 
+                 opacity: 1;
+         }
+         #butnn:hover{
+            opacity: 0.5;
+            
+         }
+
+
+
+</style>
+</head>
+<body>
+<form>
+	<div class="container">
+		<h1>Login</h1>
+		<h2>By Satya</h2>
+		<P>Enter the Username and Password</P>
+		<hr>
+		<label><b>email or username</b></label>
+		<input id="email" type="text" placeholder="Please enter a valid email address or Username" required />
+		<label><b>Password</b></label>
+		<input type="Password" id="pswd" placeholder="Please enter a valid Password" required />
+		<P>By clicking login you agree to our <a href="http://www.itextpad.com/IhJlEbD2Qa">terms and privacy policy</a></P>
+		<button id="butnn" class="regesterbuttn" onclick="valid()"> Sign In</button>
+		<div>
+</form>
+
+</body>
+</html>
